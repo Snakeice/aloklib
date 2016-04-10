@@ -10,8 +10,16 @@ public class minhaClasse {
     private String nome;
     private String endereco;
 
+    public minhaClasse() {
+    }
+
     public minhaClasse(String nome) {
         this.nome = nome;
+    }
+
+    public minhaClasse(String nome, String endereco) {
+        this.nome = nome;
+        this.endereco = endereco;
     }
 
     public String getNome() {

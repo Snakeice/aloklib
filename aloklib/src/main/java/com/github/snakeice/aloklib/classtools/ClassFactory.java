@@ -1,5 +1,7 @@
 package com.github.snakeice.aloklib.classtools;
 
+import com.github.snakeice.aloklib.constructortools.ConstructorsHelper;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -8,22 +10,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class ClassFactory {
     public static <T> T getInstance(Class<T> klass, Object... objects) {
-        T instance = null;
         Constructor[] constructors = klass.getConstructors();
-        try {
-            instance = (T) constructors[0].newInstance(objects);
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                instance = klass.newInstance();
-            } catch (InstantiationException e1) {
-                e1.printStackTrace();
-            } catch (IllegalAccessException e1) {
-                e1.printStackTrace();
-            }
-        }
-        return instance;
+        ConstructorsHelper<T> ch = new ConstructorsHelper<>(constructors);
+        return ch.newInstance(objects);
     }
 }
