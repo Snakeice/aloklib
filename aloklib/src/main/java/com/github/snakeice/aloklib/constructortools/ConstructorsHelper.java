@@ -39,9 +39,7 @@ public class ConstructorsHelper<T> {
                 constructor = constructors[0];
             }
             return (T) constructor.newInstance(objects);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception ignore) {}
         return null;
     }
 }
