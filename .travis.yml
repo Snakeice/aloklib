@@ -9,5 +9,7 @@ android:
   - android-23
   - extra-android-m2repository
   - addon-google_apis-google-+
+script:
+  - ./gradlew build 
 before_install:
   - chmod +x gradlew
