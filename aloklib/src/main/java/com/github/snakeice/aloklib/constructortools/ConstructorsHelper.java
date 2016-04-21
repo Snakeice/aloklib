@@ -17,31 +17,29 @@ public class ConstructorsHelper<T> {
         this.constructors = constructors;
     }
 
-    public Constructor findByParam(Object... objects){
+    public Constructor findByParam(Object... objects) {
         List<Class> types;
         types = new ArrayList<>();
-        for (Object o:objects) {
+        for (Object o : objects) {
             types.add(o.getClass());
         }
-        for (Constructor c:constructors) {
-            if (Arrays.equals(c.getParameterTypes(), types.toArray())){
+        for (Constructor c : constructors) {
+            if (Arrays.equals(c.getParameterTypes(), types.toArray())) {
                 return c;
             }
         }
-        return constructors[0];
+        return null;
     }
+
     @SuppressWarnings("All")
-    public T newInstance(Object... objects){
+    public T newInstance(Object... objects) {
         try {
-           return (T) findByParam(objects).newInstance(objects);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            return (T) constructors[0].newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            Constructor constructor = findByParam(objects);
+            if (constructor == null) {
+                constructor = constructors[0];
+            }
+            return (T) constructor.newInstance(objects);
+        } catch (Exception ignore) {}
         return null;
     }
 }
