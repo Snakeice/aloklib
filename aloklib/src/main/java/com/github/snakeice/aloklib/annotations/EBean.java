@@ -8,7 +8,12 @@ import java.lang.annotation.Target;
 /**
  * Created by Rodrigo on 09/04/2016.
  */
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface EBean {
+    enum Type {Singleton, Normal}
+
+    Type type();
+
+    Class klzz() default EBean.class;
 }

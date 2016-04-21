@@ -3,21 +3,21 @@ package com.github.snakeice.alokframework;
 import com.github.snakeice.aloklib.annotations.EBean;
 
 /**
- * Created by Rodrigo on 09/04/2016.
+ * Created by Rodrigo on 17/04/2016.
  */
-@EBean(type = EBean.Type.Normal)
-public class MinhaClasse {
+@EBean(type = EBean.Type.Singleton)
+public class MinhaClassSingleton {
     private String nome;
     private String endereco;
 
-    public MinhaClasse() {
+    public MinhaClassSingleton() {
     }
 
-    public MinhaClasse(String nome) {
+    public MinhaClassSingleton(String nome) {
         this.nome = nome;
     }
 
-    public MinhaClasse(String nome, String endereco) {
+    public MinhaClassSingleton(String nome, String endereco) {
         this.nome = nome;
         this.endereco = endereco;
     }

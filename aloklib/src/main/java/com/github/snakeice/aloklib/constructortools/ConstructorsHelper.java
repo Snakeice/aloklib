@@ -30,24 +30,16 @@ public class ConstructorsHelper<T> {
         }
         return constructors[0];
     }
-
+    @SuppressWarnings("All")
     public T newInstance(Object... objects){
         try {
            return (T) findByParam(objects).newInstance(objects);
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         try {
             return (T) constructors[0].newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
