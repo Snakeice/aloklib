@@ -7,16 +7,16 @@ import android.os.Bundle;
 import com.github.snakeice.aloklib.core.ContextRepository;
 
 public class Testes extends AppCompatActivity {
-    MinhaClasse pessoa;
+    MinhaClasseTeste pessoa;
     MinhaClassSingleton pessoaSingleton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testes);
-        ContextRepository.register(MinhaClasse.class);
+        ContextRepository.register(MinhaClasseTeste.class);
         ContextRepository.register(MinhaClassSingleton.class);
-        pessoa = ContextRepository.getInstance(MinhaClasse.class, "Rodrigo", "Rua Presidente Castelo Branco");
+        pessoa = ContextRepository.getInstance(MinhaClasseTeste.class, "Rodrigo", "Rua Presidente Castelo Branco");
         ContextRepository.getInstance(MinhaClassSingleton.class, "Singleton", " Teste ");
         pessoaSingleton = ContextRepository.getInstance(MinhaClassSingleton.class);
         new AlertDialog.Builder(this).setTitle(pessoa.getNome()).setMessage(pessoa.getEndereco()).show();
