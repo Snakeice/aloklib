@@ -38,7 +38,7 @@ Want to contribute? Great!
 
  * [ ] Finalize framwork
  * [ ] Rethink structure
- * [x] Disponibly to use in Gradle
+ * [x] <s>Disponibly to use in Gradle</s>
  * [ ] Write Tests
  * [ ] Add Code Comments
  * [ ] Add Night Mode
