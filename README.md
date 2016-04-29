@@ -25,7 +25,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 	dependencies {
-	        compile 'com.github.Snakeice:aloklib:teste'
+	        compile 'com.github.Snakeice:aloklib:0.0.6'
 	}
 ```
 ### Development
@@ -36,12 +36,12 @@ Want to contribute? Great!
 
 ### Todos
 
- - Finalize framwork
- - Rethink structure
- - Disponibly to use in Gradle
- - Write Tests
- - Add Code Comments
- - Add Night Mode
+ * [ ] Finalize framwork
+ * [ ] Rethink structure
+ * [x] Disponibly to use in Gradle
+ * [ ] Write Tests
+ * [ ] Add Code Comments
+ * [ ] Add Night Mode
 
 License
 ----
